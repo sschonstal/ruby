@@ -12,4 +12,17 @@ class Parser
          .map{|category, data| data.sort_by {|item| -item["price"] }
          .slice(0,top)}
    end
+
+   def getCdsOver(minutes)
+      data.select{|item| item["type"] == "cd"}
+         .map{|cd| addTotalRunTime(cd)}
+         .select{|cd| cd["totalMinutes"] > minutes}
+   end
+
+   def addTotalRunTime(cd)
+      runtime = cd["tracks"].reduce(0){ |total, track| total + track["seconds"]}
+      cd["totalMinutes"] = runtime/60
+      return cd
+   end
 end
+

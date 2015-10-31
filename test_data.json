@@ -135,16 +135,16 @@
     "price": 12.99,
     "tracks": [
       {
-        "seconds": 180,
+        "seconds": 800,
         "name": "one"
       },
       {
-        "seconds": 200,
+        "seconds": 3000,
         "name": "two"
       }
     ],
     "year": 2000,
-    "title": "baz",
+    "title": "two over sixty",
     "author": "joan",
     "type": "cd"
   },
@@ -152,16 +152,20 @@
     "price": 13.99,
     "tracks": [
       {
-        "seconds": 180,
+        "seconds": 400,
         "name": "one"
       },
       {
-        "seconds": 200,
+        "seconds": 1400,
         "name": "two"
+      },
+      {
+        "seconds": 2000,
+        "name": "three"
       }
     ],
     "year": 2000,
-    "title": "baz",
+    "title": "three over 60",
     "author": "joan",
     "type": "cd"
   },
@@ -169,16 +173,16 @@
     "price": 11.99,
     "tracks": [
       {
-        "seconds": 180,
+        "seconds": 650,
         "name": "one"
       },
       {
-        "seconds": 200,
+        "seconds": 600,
         "name": "two"
       }
     ],
     "year": 2000,
-    "title": "baz",
+    "title": "two over twenty",
     "author": "joan",
     "type": "cd"
   },
@@ -186,16 +190,20 @@
     "price": 15.99,
     "tracks": [
       {
-        "seconds": 180,
+        "seconds": 500,
         "name": "one"
       },
       {
-        "seconds": 200,
+        "seconds": 400,
         "name": "two"
+      },
+      {
+        "seconds": 350,
+        "name": "three"
       }
     ],
     "year": 2000,
-    "title": "baz",
+    "title": "three over twenty",
     "author": "joan",
     "type": "cd"
   },

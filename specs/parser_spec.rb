@@ -1,5 +1,5 @@
 require_relative '../lib/parser'
- 
+
 describe "parser" do
    before :all do
       #ios = IO.new STDOUT.fileno
@@ -37,5 +37,24 @@ describe "parser" do
       it "all items should be more than 12.99" do
          @top.each { |category| category.each{ |item| expect(item["price"]).to be > 12.98}}
       end
+   end
+
+   describe "getCdsOver" do
+      it "should only return type CD" do
+         @cds = @parser.getCdsOver(0)
+         expect(@cds.select{|item| item["type"] != "cd"}.length).to equal(0)
+         expect(@cds.select{|item| item["type"] == "cd"}.length).to be > 0
+      end
+
+      it "should only return 2 cds with totalMinutes > 60" do
+         @cds = @parser.getCdsOver(60)
+         expect(@cds.select{|item| item["type"] == "cd"}.length).to equal(2)
+      end
+
+      it "should only return 4 cds with totalMinutes > 20" do
+         @cds = @parser.getCdsOver(20)
+         expect(@cds.select{|item| item["type"] == "cd"}.length).to equal(2)
+      end
+
    end
 end
