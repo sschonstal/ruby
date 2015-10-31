@@ -2,11 +2,10 @@
 require_relative './lib/parser'
 
 if ARGV.empty?
-    fileStream = $stdin
+  file_stream = $stdin
 else
-    fileStream = File.new(ARGV[0])
+  file_stream = File.new(ARGV[0])
 end
 
-@parser = Parser.new(fileStream)
+@parser = Parser.new(file_stream)
 puts @parser.data
-
