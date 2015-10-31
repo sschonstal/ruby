@@ -1,5 +1,77 @@
 [
   {
+    "price": 11.99,
+    "chapters": [
+      "one",
+      "two",
+      "three"
+    ],
+    "year": 1999,
+    "title": "foo",
+    "author": "mary",
+    "type": "book"
+  },
+  {
+    "price": 12.99,
+    "chapters": [
+      "one",
+      "two",
+      "three"
+    ],
+    "year": 1999,
+    "title": "foo",
+    "author": "mary",
+    "type": "book"
+  },
+  {
+    "price": 16.99,
+    "chapters": [
+      "one",
+      "two",
+      "three"
+    ],
+    "year": 1999,
+    "title": "foo",
+    "author": "mary",
+    "type": "book"
+  },
+  {
+    "price": 10.99,
+    "chapters": [
+      "one",
+      "two",
+      "three"
+    ],
+    "year": 1999,
+    "title": "foo",
+    "author": "mary",
+    "type": "book"
+  },
+  {
+    "price": 13.99,
+    "chapters": [
+      "one",
+      "two",
+      "three"
+    ],
+    "year": 1999,
+    "title": "foo",
+    "author": "mary",
+    "type": "book"
+  },
+  {
+    "price": 14.99,
+    "chapters": [
+      "one",
+      "two",
+      "three"
+    ],
+    "year": 1999,
+    "title": "foo",
+    "author": "mary",
+    "type": "book"
+  },
+  {
     "price": 15.99,
     "chapters": [
       "one",
@@ -12,6 +84,14 @@
     "type": "book"
   },
   {
+    "price": 12.99,
+    "minutes": 90,
+    "year": 2004,
+    "title": "bar",
+    "director": "alan",
+    "type": "dvd"
+  },
+  {
     "price": 11.99,
     "minutes": 90,
     "year": 2004,
@@ -20,7 +100,124 @@
     "type": "dvd"
   },
   {
+    "price": 13.99,
+    "minutes": 90,
+    "year": 2004,
+    "title": "bar",
+    "director": "alan",
+    "type": "dvd"
+  },
+  {
     "price": 15.99,
+    "minutes": 90,
+    "year": 2004,
+    "title": "bar",
+    "director": "alan",
+    "type": "dvd"
+  },
+  {
+    "price": 14.99,
+    "minutes": 90,
+    "year": 2004,
+    "title": "bar",
+    "director": "alan",
+    "type": "dvd"
+  },
+  {
+    "price": 16.99,
+    "minutes": 90,
+    "year": 2004,
+    "title": "bar",
+    "director": "alan",
+    "type": "dvd"
+  },
+  {
+    "price": 12.99,
+    "tracks": [
+      {
+        "seconds": 180,
+        "name": "one"
+      },
+      {
+        "seconds": 200,
+        "name": "two"
+      }
+    ],
+    "year": 2000,
+    "title": "baz",
+    "author": "joan",
+    "type": "cd"
+  },
+  {
+    "price": 13.99,
+    "tracks": [
+      {
+        "seconds": 180,
+        "name": "one"
+      },
+      {
+        "seconds": 200,
+        "name": "two"
+      }
+    ],
+    "year": 2000,
+    "title": "baz",
+    "author": "joan",
+    "type": "cd"
+  },
+  {
+    "price": 11.99,
+    "tracks": [
+      {
+        "seconds": 180,
+        "name": "one"
+      },
+      {
+        "seconds": 200,
+        "name": "two"
+      }
+    ],
+    "year": 2000,
+    "title": "baz",
+    "author": "joan",
+    "type": "cd"
+  },
+  {
+    "price": 15.99,
+    "tracks": [
+      {
+        "seconds": 180,
+        "name": "one"
+      },
+      {
+        "seconds": 200,
+        "name": "two"
+      }
+    ],
+    "year": 2000,
+    "title": "baz",
+    "author": "joan",
+    "type": "cd"
+  },
+  {
+    "price": 16.99,
+    "tracks": [
+      {
+        "seconds": 180,
+        "name": "one"
+      },
+      {
+        "seconds": 200,
+        "name": "two"
+      }
+    ],
+    "year": 2000,
+    "title": "baz",
+    "author": "joan",
+    "type": "cd"
+  },
+  {
+    "price": 14.99,
     "tracks": [
       {
         "seconds": 180,
