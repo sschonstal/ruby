@@ -26,4 +26,13 @@ class Parser
     cd['totalMinutes'] = runtime / 60
     return cd # rubocop:disable RedundantReturn
   end
+
+  def find_author_intersect(a, b)
+    ahash = {}
+    data.select { |item| item['type'] == a }
+      .each { |item| ahash[item['author']] = item['author'] }
+
+    data.select { |item| item['type'] == b && ahash[item['author']] }
+      .map { |item| item['author'] }.uniq
+  end
 end

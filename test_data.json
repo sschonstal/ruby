@@ -8,7 +8,7 @@
     ],
     "year": 1999,
     "title": "foo",
-    "author": "mary",
+    "author": "Martin Fowler",
     "type": "book"
   },
   {
@@ -20,7 +20,7 @@
     ],
     "year": 1999,
     "title": "foo",
-    "author": "mary",
+    "author": "Ken Beck",
     "type": "book"
   },
   {
@@ -32,7 +32,7 @@
     ],
     "year": 1999,
     "title": "foo",
-    "author": "mary",
+    "author": "Robert Martin",
     "type": "book"
   },
   {
@@ -44,7 +44,7 @@
     ],
     "year": 1999,
     "title": "foo",
-    "author": "mary",
+    "author": "Neil Peart",
     "type": "book"
   },
   {
@@ -56,7 +56,7 @@
     ],
     "year": 1999,
     "title": "foo",
-    "author": "mary",
+    "author": "Frank Zappa",
     "type": "book"
   },
   {
@@ -68,7 +68,7 @@
     ],
     "year": 1999,
     "title": "foo",
-    "author": "mary",
+    "author": "Neil Peart",
     "type": "book"
   },
   {
@@ -145,7 +145,7 @@
     ],
     "year": 2000,
     "title": "two over sixty",
-    "author": "joan",
+    "author": "Mike",
     "type": "cd"
   },
   {
@@ -166,7 +166,7 @@
     ],
     "year": 2000,
     "title": "three over 60",
-    "author": "joan",
+    "author": "Josh",
     "type": "cd"
   },
   {
@@ -183,7 +183,7 @@
     ],
     "year": 2000,
     "title": "two over twenty",
-    "author": "joan",
+    "author": "Eli",
     "type": "cd"
   },
   {
@@ -204,7 +204,7 @@
     ],
     "year": 2000,
     "title": "three over twenty",
-    "author": "joan",
+    "author": "Debbie",
     "type": "cd"
   },
   {
@@ -219,9 +219,9 @@
         "name": "two"
       }
     ],
-    "year": 2000,
-    "title": "baz",
-    "author": "joan",
+    "year": 1974,
+    "title": "Apostrophe",
+    "author": "Frank Zappa",
     "type": "cd"
   },
   {
@@ -236,9 +236,9 @@
         "name": "two"
       }
     ],
-    "year": 2000,
-    "title": "baz",
-    "author": "joan",
+    "year": 1976,
+    "title": "Rush 2112",
+    "author": "Neil Peart",
     "type": "cd"
   }
 ]

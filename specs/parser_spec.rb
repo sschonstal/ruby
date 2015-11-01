@@ -57,4 +57,14 @@ describe 'parser' do
       expect(@cds.count { |item| item['type'] == 'cd' }).to equal(2)
     end
   end
+
+  describe 'find_author_intersect' do
+    it 'should only return only common autors' do
+      authors = @parser.find_author_intersect('cd', 'book')
+      expect(authors).to include('Frank Zappa')
+      expect(authors).to include('Neil Peart')
+      expect(authors).not_to include('Debbie')
+      expect(authors).not_to include('Martin Fowler')
+    end
+  end
 end
