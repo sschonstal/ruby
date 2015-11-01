@@ -1,4 +1,5 @@
 require_relative '../lib/parser'
+require 'json'
 
 describe 'parser' do
   before :all do
@@ -65,6 +66,79 @@ describe 'parser' do
       expect(authors).to include('Neil Peart')
       expect(authors).not_to include('Debbie')
       expect(authors).not_to include('Martin Fowler')
+    end
+  end
+
+  describe 'find_items_with_deep_year' do
+    before :all do
+      @year_data = @parser.find_items_with_deep_year
+    end
+
+    it 'should only return dvds with years in there titles' do
+      expect(@year_data.count { |i| i['type'] == 'dvd' }).to equal(2)
+      expect(@year_data.count { |i| i['title']['year'] == 1953 }).to equal(1)
+      expect(@year_data.count { |i| i['title']['year'] == 2005 }).to equal(1)
+    end
+
+    it 'should only return cds with years in atleast one of the tracks' do
+      expect(@year_data.count { |i| i['type'] == 'cd' }).to equal(1)
+      expect(@year_data.count { |i| i['title'] == 'Rush 2112' }).to equal(1)
+    end
+
+    it 'should only return books with years in atleast one of the chapters' do
+      expect(@year_data.count { |i| i['type'] == 'book' }).to equal(1)
+      expect(@year_data.count { |i| i['title'] == '1984' }).to equal(1)
+    end
+  end
+
+  describe 'year in sub property oddness' do
+    it 'return false if title is a string' do
+      item = JSON.parse('{ "title": "string" }')
+      expect(@parser.year_in_title?(item)).to be false
+    end
+
+    it 'return true if title is an object containing year property' do
+      item = JSON.parse('{ "title": { "year": 1999 } }')
+      expect(@parser.year_in_title?(item)).to be true
+    end
+
+    it 'return false if all chapters are strings' do
+      item = JSON.parse('{ "chapters": [ "one", "two", "three" ] }')
+      expect(@parser.year_in_chapter?(item)).to be false
+    end
+
+    it 'return true if any chapter is an object containing year property' do
+      item = JSON.parse('{ "chapters": [ "one", { "year": 1999 }, "three" ] }')
+      expect(@parser.year_in_chapter?(item)).to be true
+    end
+
+    it 'return false if no tracks contain year' do
+      item = JSON.parse('{ "tracks": [
+                                       {
+                                         "seconds": 180,
+                                         "name": "one"
+                                       }, {
+                                         "seconds": 200,
+                                         "name": "two"
+                                       }
+                                     ]
+                         }')
+      expect(@parser.year_in_track?(item)).to be false
+    end
+
+    it 'return true if any track contains a year' do
+      item = JSON.parse('{ "tracks": [
+                                       {
+                                         "seconds": 180,
+                                         "name": "one"
+                                       }, {
+                                         "seconds": 200,
+                                         "name": "two",
+                                         "year": 1986
+                                       }
+                                     ]
+                         }')
+      expect(@parser.year_in_track?(item)).to be true
     end
   end
 end

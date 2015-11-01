@@ -26,7 +26,7 @@ class Parser
     cd['totalMinutes'] = runtime / 60
     return cd # rubocop:disable RedundantReturn
   end
-
+  
   def find_author_intersect(a, b)
     ahash = {}
     data.select { |item| item['type'] == a }
@@ -34,5 +34,35 @@ class Parser
 
     data.select { |item| item['type'] == b && ahash[item['author']] }
       .map { |item| item['author'] }.uniq
+  end
+
+  def find_items_with_deep_year
+    data.select { |item| year_in_subitem(item) }
+  end
+
+  def year_in_subitem(item)
+    year_in_title?(item) ||
+      year_in_chapter?(item) ||
+      year_in_track?(item)
+  end
+
+  def year_in_title?(item)
+    if item['title'].is_a?(Hash) && item['title'].key?('year')
+      true
+    else
+      false
+    end
+  end
+
+  def year_in_chapter?(item)
+    item.key?('chapters') &&
+      item['chapters']
+        .reduce(false) { |a, e| a || (e.is_a?(Hash) && e.key?('year')) }
+  end
+
+  def year_in_track?(item)
+    item.key?('tracks') &&
+      item['tracks']
+        .reduce(false) { |a, e| a || (e.is_a?(Hash) && e.key?('year')) }
   end
 end

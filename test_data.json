@@ -6,8 +6,8 @@
       "two",
       "three"
     ],
-    "year": 1999,
-    "title": "foo",
+    "year": 2002,
+    "title": "Patterns of Enterprise Application Architecture",
     "author": "Martin Fowler",
     "type": "book"
   },
@@ -18,8 +18,8 @@
       "two",
       "three"
     ],
-    "year": 1999,
-    "title": "foo",
+    "year": 2002,
+    "title": "Test Driven Development: By Example",
     "author": "Ken Beck",
     "type": "book"
   },
@@ -30,8 +30,8 @@
       "two",
       "three"
     ],
-    "year": 1999,
-    "title": "foo",
+    "year": 2011,
+    "title": "The Clean Coder",
     "author": "Robert Martin",
     "type": "book"
   },
@@ -42,8 +42,8 @@
       "two",
       "three"
     ],
-    "year": 1999,
-    "title": "foo",
+    "year": 2002,
+    "title": "Ghost Rider",
     "author": "Neil Peart",
     "type": "book"
   },
@@ -54,8 +54,8 @@
       "two",
       "three"
     ],
-    "year": 1999,
-    "title": "foo",
+    "year": 1990,
+    "title": "The Real Frank Zappa Book",
     "author": "Frank Zappa",
     "type": "book"
   },
@@ -75,11 +75,14 @@
     "price": 15.99,
     "chapters": [
       "one",
-      "two",
+      {
+        "chapter": "two",
+        "year": 1984
+      },
       "three"
     ],
     "year": 1999,
-    "title": "foo",
+    "title": "1984",
     "author": "mary",
     "type": "book"
   },
@@ -110,17 +113,23 @@
   {
     "price": 15.99,
     "minutes": 90,
-    "year": 2004,
-    "title": "bar",
-    "director": "alan",
+    "year": 2005,
+    "title": {
+      "title": "War of the Worlds",
+      "year": 2005
+    },
+    "director": "Steven Spielberg",
     "type": "dvd"
   },
   {
     "price": 14.99,
     "minutes": 90,
-    "year": 2004,
-    "title": "bar",
-    "director": "alan",
+    "year": 1953,
+    "title": {
+      "title": "War of the Worlds",
+      "year": 1953
+    },
+    "director": "Byron Haskin",
     "type": "dvd"
   },
   {
@@ -233,7 +242,8 @@
       },
       {
         "seconds": 200,
-        "name": "two"
+        "name": "two",
+        "year": 2112
       }
     ],
     "year": 1976,

@@ -10,15 +10,21 @@ end
 @parser = Parser.new(file_stream)
 
 def display_item(item)
-  puts format('%-20s $%.2f', item['title'], item['price'])
+  puts format('%-20.19s $%.2f',
+              item['title']['title'] || item['title'],
+              item['price'])
+end
+
+def display_items(data)
+  puts format('%-20s %6s', 'Title', 'Price')
+  puts '-' * 30
+  data.each { |item| display_item(item) }
 end
 
 def display_by_category(name, data)
   puts
   puts 'Category: ' + name
-  puts format('%-20s %6s', 'Title', 'Price')
-  puts '-' * 30
-  data.each { |item| display_item(item) }
+  display_items(data)
 end
 
 def display_top(category)
@@ -27,7 +33,7 @@ def display_top(category)
 end
 
 def display_cd(item)
-  puts format('%-20s %-15s %-5s %8d',
+  puts format('%-20.19s %-15.14s %-5s %8d',
               item['title'],
               item['author'],
               item['year'],
@@ -36,7 +42,7 @@ end
 
 def display_cds(cds)
   puts
-  puts format('%-20s %-15s %-5s %8s', 'Title', 'Author', 'Year', 'Length')
+  puts format('%-20.19s %-15.14s %-5s %8s', 'Title', 'Author', 'Year', 'Length')
   puts '-' * 55
   cds.each { |item| display_cd(item) }
 end
@@ -62,5 +68,10 @@ puts
 puts '3. These authors have also released cds'
 authors = @parser.find_author_intersect('cd', 'book')
 display_authors(authors)
+
+puts
+puts '4. These items have a title, track, or chapter that contains a year'
+with_year = @parser.find_items_with_deep_year
+display_items(with_year)
 
 puts
