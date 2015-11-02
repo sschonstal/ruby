@@ -11,8 +11,8 @@ end
 
 def display_item(item)
   puts format('%-20.19s $%.2f',
-              item['title']['title'] || item['title'],
-              item['price'])
+              item.title,
+              item.price)
 end
 
 def display_items(data)
@@ -28,16 +28,16 @@ def display_by_category(name, data)
 end
 
 def display_top(category)
-  category.group_by { |item| item['type'] }
+  category.group_by(&:type)
     .map { |name, data| display_by_category(name, data) }
 end
 
-def display_cd(item)
+def display_cd(cd)
   puts format('%-20.19s %-15.14s %-5s %8d',
-              item['title'],
-              item['author'],
-              item['year'],
-              item['totalMinutes'])
+              cd.title,
+              cd.author,
+              cd.year,
+              cd.total_minutes)
 end
 
 def display_cds(cds)
@@ -61,8 +61,7 @@ top.each { |category| display_top(category) }
 
 puts
 puts '2. These cds have a total running time longer than 60 minutes'
-long = @parser.get_cds_over(60)
-display_cds(long)
+display_cds(@parser.get_cds_over(60))
 
 puts
 puts '3. These authors have also released cds'
