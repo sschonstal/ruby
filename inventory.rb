@@ -19,7 +19,7 @@ def display_items(data, show_details = false)
   display_header(data)
   data.each do |item|
     puts item.to_s
-    puts item.details if show_details
+    puts item.details if item.details && show_details
   end
 end
 
@@ -55,7 +55,7 @@ display_authors(authors)
 
 puts
 puts '4. These items have a title, track, or chapter that contains a year'
-with_year = @parser.find_items_with_deep_year
+with_year = @parser.find_items_with_year
 display_by_category(with_year, true)
 
 puts

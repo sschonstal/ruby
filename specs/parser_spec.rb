@@ -71,20 +71,22 @@ describe 'parser' do
     end
   end
 
-  describe 'find_items_with_deep_year' do
+  describe 'find_items_with_year' do
     before :all do
-      @year_data = @parser.find_items_with_deep_year
+      @year_data = @parser.find_items_with_year
     end
 
     it 'should only return dvds with years in there titles' do
       expect(@year_data.count { |i| i.type == 'dvd' }).to equal(2)
-      expect(@year_data.count { |i| i.title_year == 1953 }).to equal(1)
-      expect(@year_data.count { |i| i.title_year == 2005 }).to equal(1)
+      expect(@year_data.count { |i| i.title == 'War of the Worlds 1953' })
+        .to equal(1)
+      expect(@year_data.count { |i| i.title == 'War of the Worlds 2005' })
+        .to equal(1)
     end
 
     it 'should only return cds with years in atleast one of the tracks' do
       expect(@year_data.count { |i| i.type == 'cd' }).to equal(1)
-      expect(@year_data.count { |i| i.title == 'Rush 2112' }).to equal(1)
+      expect(@year_data.count { |i| i.title == 'Rush' }).to equal(1)
     end
 
     it 'should only return books with years in atleast one of the chapters' do

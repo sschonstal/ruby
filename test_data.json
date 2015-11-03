@@ -75,10 +75,7 @@
     "price": 15.99,
     "chapters": [
       "one",
-      {
-        "chapter": "two",
-        "year": 1984
-      },
+      "year 1984",
       "three"
     ],
     "year": 1999,
@@ -114,10 +111,7 @@
     "price": 15.99,
     "minutes": 90,
     "year": 2005,
-    "title": {
-      "title": "War of the Worlds",
-      "year": 2005
-    },
+    "title": "War of the Worlds 2005",
     "director": "Steven Spielberg",
     "type": "dvd"
   },
@@ -125,10 +119,7 @@
     "price": 14.99,
     "minutes": 90,
     "year": 1953,
-    "title": {
-      "title": "War of the Worlds",
-      "year": 1953
-    },
+    "title": "War of the Worlds 1953",
     "director": "Byron Haskin",
     "type": "dvd"
   },
@@ -174,7 +165,7 @@
       }
     ],
     "year": 2000,
-    "title": "three over 60",
+    "title": "three over ",
     "author": "Josh",
     "type": "cd"
   },
@@ -242,12 +233,11 @@
       },
       {
         "seconds": 200,
-        "name": "two",
-        "year": 2112
+        "name": "2112"
       }
     ],
     "year": 1976,
-    "title": "Rush 2112",
+    "title": "Rush",
     "author": "Neil Peart",
     "type": "cd"
   }

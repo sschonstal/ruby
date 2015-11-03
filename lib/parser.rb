@@ -39,7 +39,7 @@ class Parser
       .map(&:author).uniq
   end
 
-  def find_items_with_deep_year
+  def find_items_with_year
     @items.select do |item|
       item.year_in_title? ||
         item.year_in_chapter? ||

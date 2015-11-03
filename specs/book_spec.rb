@@ -16,7 +16,7 @@ describe 'book' do
     end
 
     it 'return true if any chapter is an object containing year property' do
-      data = { 'chapters' => ['one', { 'year' => 1999 }, 'three'] }
+      data = { 'chapters' => ['one', 'year 1999', 'three'] }
       book = Book.new(data)
       expect(book.year_in_chapter?).to be true
     end

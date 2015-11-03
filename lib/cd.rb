@@ -12,7 +12,7 @@ class Cd < Item
 
   def year_in_track?
     @item.key?('tracks') && @item['tracks']
-      .reduce(false) { |a, e| a || (e.is_a?(Hash) && e.key?('year')) }
+      .reduce(false) { |a, e| a || year?(e['name']) }
   end
 
   def total_minutes

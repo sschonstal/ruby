@@ -39,7 +39,7 @@ class Item
   end
 
   def year_in_title?
-    @item['title'].is_a?(Hash) && @item['title'].key?('year')
+    year?(@item['title'])
   end
 
   def year_in_chapter?
@@ -62,5 +62,10 @@ class Item
 
   def details
     nil
+  end
+
+  def year?(str)
+    gotit = str =~ /(^|\s)[1-9][0-9]{0,3}($|\s)/
+    gotit.nil? ? false : true
   end
 end

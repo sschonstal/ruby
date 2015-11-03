@@ -24,8 +24,7 @@ describe 'cd' do
                             'name' => 'one'
                           }, {
                             'seconds' => 200,
-                            'year' => 1986,
-                            'name' => 'two'
+                            'name' => 'two 1234'
                           }] }
     cd = Cd.new(data)
     expect(cd.year_in_track?).to be true

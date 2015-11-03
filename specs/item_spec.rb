@@ -55,16 +55,29 @@ describe 'item' do
                                  ' 1999 253.99')
     end
   end
-  describe 'year in sub property oddness' do
+  describe 'year in title' do
     it 'return false if title is a string' do
       item = { 'title' => 'string' }
       item = Item.new(item)
       expect(item.year_in_title?).to be false
     end
-    it 'return true if title is an object containing year property' do
-      item = { 'title' => { 'year' => 1999 } }
+    it 'return true if title contains a year' do
+      item = { 'title' => 'this is a year 1999' }
       item = Item.new(item)
       expect(item.year_in_title?).to be true
+    end
+  end
+  describe 'year?' do
+    it 'should return true if string contains 1 to 4 digit number' do
+      expect(Item.new({}).year?('1995')).to be true
+      expect(Item.new({}).year?('99')).to be true
+      expect(Item.new({}).year?('summer of 69')).to be true
+      expect(Item.new({}).year?('rome 368 a bad year')).to be true
+    end
+    it 'should return false if string dosnt contain year' do
+      expect(Item.new({}).year?('i995')).to be false
+      expect(Item.new({}).year?('99p')).to be false
+      expect(Item.new({}).year?('summer of')).to be false
     end
   end
 end

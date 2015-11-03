@@ -12,7 +12,7 @@ class Book < Item
 
   def year_in_chapter?
     @item.key?('chapters') && @item['chapters']
-      .reduce(false) { |a, e| a || (e.is_a?(Hash) && e.key?('year')) }
+      .reduce(false) { |a, e| a || year?(e) }
   end
 
   def details
