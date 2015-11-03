@@ -44,6 +44,17 @@ describe 'item' do
       expect(item.year).to equal(1963)
     end
   end
+  describe 'to_s' do
+    it 'should format string for display' do
+      data = { 'type' => 'cd',
+               'title' => '123456789012345678901234567890',
+               'year' => 1999,
+               'price' => 253.99 }
+      item = Item.new(data)
+      expect(item.to_s).to match('cd   123456789012345678901234'\
+                                 ' 1999 253.99')
+    end
+  end
   describe 'year in sub property oddness' do
     it 'return false if title is a string' do
       item = { 'title' => 'string' }

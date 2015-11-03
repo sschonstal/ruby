@@ -4,6 +4,7 @@
 #
 class Item
   def initialize(data)
+    @price = 0
     @item = data
   end
 
@@ -47,5 +48,19 @@ class Item
 
   def year_in_track?
     false
+  end
+
+  def to_s
+    format('%-5.4s%-25.24s%-5.4d%.2f',
+           type, title, year, price)
+  end
+
+  def header
+    format('%-5.4s%-25.24s%-5s%s',
+           'Type', 'Title', 'Year', 'Price')
+  end
+
+  def details
+    nil
   end
 end

@@ -30,4 +30,18 @@ describe 'cd' do
     cd = Cd.new(data)
     expect(cd.year_in_track?).to be true
   end
+
+  describe 'to_s' do
+    it 'should format string for display' do
+      data = { 'type' => 'cd',
+               'title' => '1234567890123456789012345',
+               'year' => 1999,
+               'author' => 'asdfghjklqwertyuiop',
+               'tracks' => [{ 'seconds' => 4000 }],
+               'price' => 253.99 }
+      item = Cd.new(data)
+      expect(item.to_s).to match('cd   123456789012345678901234'\
+                                ' asdfghjklqwertyuiop 1999 66   253.99')
+    end
+  end
 end

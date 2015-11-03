@@ -14,4 +14,10 @@ class Book < Item
     @item.key?('chapters') && @item['chapters']
       .reduce(false) { |a, e| a || (e.is_a?(Hash) && e.key?('year')) }
   end
+
+  def details
+    @item['chapters'].reduce('') do |str, chapter|
+      str << format("        |_ %s\n", chapter)
+    end
+  end
 end
