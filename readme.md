@@ -1,6 +1,6 @@
 # Readme
 ## Description
-Coding exercise for Elemental Technologies
+Coding exercise for Ruby
 by Sam Schonstal - November 3, 2015
 
 #Usage

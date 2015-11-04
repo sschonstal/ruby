@@ -25,11 +25,11 @@ class Item
   end
 
   def price
-    @price = @item['price']
+    @price = @item['price'] || 0
   end
 
   def year
-    @year = @item['year']
+    @year = @item['year'] || 0
   end
 
   def title_year
@@ -65,6 +65,11 @@ class Item
   end
 
   def year?(str)
+    # assuming year is
+    # any 1 to 4 digit number
+    # that does not start with 0
+    # at the start of the line or leading white space
+    # at the end of the line or trailing white space
     gotit = str =~ /(^|\s)[1-9][0-9]{0,3}($|\s)/
     gotit.nil? ? false : true
   end

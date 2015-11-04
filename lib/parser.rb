@@ -9,13 +9,14 @@ class Parser
 
   def initialize(fileStream)
     @data = JSON.parse(fileStream.read)
-    @items = data.map do |item|
-      begin
-        Object.const_get(item['type'].capitalize).new(item)
-      rescue
-        Item.new(item)
-      end
-    end
+    @items = data.select { |i| i.key?('type') }
+             .map do |item|
+               begin
+                 Object.const_get(item['type'].capitalize).new(item)
+               rescue
+                 Item.new(item)
+               end
+             end
   end
 
   def get_top_in_category(top)

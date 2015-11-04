@@ -11,12 +11,15 @@ class Cd < Item
   end
 
   def year_in_track?
-    @item.key?('tracks') && @item['tracks']
-      .reduce(false) { |a, e| a || year?(e['name']) }
+    tracks.reduce(false) { |a, e| a || year?(e['name']) }
   end
 
   def total_minutes
-    @item['tracks'].reduce(0) { |a, e| a + e['seconds'] } / 60
+    tracks.reduce(0) { |a, e| a + (e['seconds'] || 0) } / 60
+  end
+
+  def tracks
+    @tracks = @item['tracks'] || {}
   end
 
   def to_s

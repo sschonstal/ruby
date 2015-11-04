@@ -1,4 +1,17 @@
 [
+  {},
+  {
+
+    "type": "book"
+  },
+    {
+    "price": 1.99,
+    "chapters": [
+    ],
+    "year": 2002,
+    "title": "no chapters",
+    "type": "book"
+  },
   {
     "price": 11.99,
     "chapters": [
@@ -67,7 +80,7 @@
       "three"
     ],
     "year": 1999,
-    "title": "foo",
+    "title": "The masked rider",
     "author": "Neil Peart",
     "type": "book"
   },
@@ -187,6 +200,14 @@
     "type": "cd"
   },
   {
+    "price": 1.99,
+    "tracks": null,
+    "year": 2000,
+    "title": "two over twenty",
+    "author": "Eli",
+    "type": "cd"
+  },
+  {
     "price": 15.99,
     "tracks": [
       {
@@ -205,6 +226,21 @@
     "year": 2000,
     "title": "three over twenty",
     "author": "Debbie",
+    "type": "cd"
+  },
+  {
+    "price": 1.99,
+    "tracks": [
+      {
+        "name": "one"
+      },
+      {
+        "seconds": 200
+       }
+    ],
+    "year": 1974,
+    "title": "Apostrophe",
+    "author": "Frank Zappa",
     "type": "cd"
   },
   {

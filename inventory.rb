@@ -27,7 +27,7 @@ def display_by_category(category, show_details = false)
   category.group_by(&:type)
     .map do |name, data|
       puts
-      puts 'Category: ' + name
+      puts 'Category: ' + name unless name.nil?
       display_items(data, show_details)
     end
 end

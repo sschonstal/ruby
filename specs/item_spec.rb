@@ -36,12 +36,22 @@ describe 'item' do
       item = Item.new(data)
       expect(item.price).to equal(5.99)
     end
+    it 'should return 0 if no price price' do
+      data = {}
+      item = Item.new(data)
+      expect(item.price).to equal(0)
+    end
   end
   describe 'year' do
     it 'should return 1963 for year' do
       data = { 'year' => 1963 }
       item = Item.new(data)
       expect(item.year).to equal(1963)
+    end
+    it 'should return 0 if no year' do
+      data = {}
+      item = Item.new(data)
+      expect(item.year).to equal(0)
     end
   end
   describe 'to_s' do
